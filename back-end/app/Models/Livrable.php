@@ -20,4 +20,9 @@ class Livrable extends Model
         'projet_id'
     ];
 
+    // mettre la relation avec la table projet
+    public function projet(){
+        return $this->belongsTo(Projet::class, 'projet_id');
+    }
+
 }

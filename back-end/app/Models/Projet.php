@@ -16,9 +16,31 @@ class Projet extends Model
     protected $fillable = [
         'titre',
         'description',
-        'etudiantID',
-        'encadrantID',
-        'consultantID '
+        'etudiant_id',
+        'encadrant_id',
+        'consultant_id'
     ];
 
+    // mettre la relation avec la table users
+    public function etudiant(){
+        return $this->belongsTo(User::class, 'etudiant_id');
+    }
+
+    public function encadrant(){
+        return $this->belongsTo(User::class, 'encadrant_id');
+    }
+
+    public function consultant(){
+        return $this->belongsTo(User::class, 'consultant_id');
+    }
+
+    // mettre la relation avec la table comments
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
+    // mettre le relation avec la table livrable
+    public function livrables(){
+        return $this->hasMany(Livrable::class);
+    }
 }

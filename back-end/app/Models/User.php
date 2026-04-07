@@ -46,4 +46,24 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    // mettre la relation avec la table projet
+    public function etudiantProjet(){
+        return $this->hasOne(Projet::class, 'etudiant_id');
+    }
+
+    public function encadrerProjet(){
+        return $this->hasMany(Projet::class, 'encadrant_id');
+    }
+
+    public function consulterProjet(){
+        return $this->hasMany(Projet::class, 'consultant_id');
+    }
+
+    // mettre la relation avec la table comment   
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
 }
