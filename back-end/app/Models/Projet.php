@@ -16,6 +16,9 @@ class Projet extends Model
     protected $fillable = [
         'titre',
         'description',
+        'date_soutenance',
+        'note_finale',
+        'salle',
         'etudiant_id',
         'encadrant_id',
         'consultant_id'

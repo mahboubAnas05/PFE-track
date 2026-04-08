@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('titre');
             $table->text('description');
+            $table->dateTime('date_soutenance')->nullable();
+            $table->decimal('note_finale', 4, 2)->nullable();
+            $table->string('salle')->nullable();
             $table->foreignId('etudiant_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('encadrant_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('consultant_id')->constrained('users')->cascadeOnDelete();
