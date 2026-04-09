@@ -2,7 +2,9 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Home from './pages/home';
+import Login from './pages/login';
 import Footer from './components/footer';
+import SignUp from './pages/signUp';
 
 function App() {
   return (
@@ -12,9 +14,11 @@ function App() {
               <Navbar/>
             </header>
 
-            <main style={{'marginTop' : '16%'}}>
+            <main>
               <Routes>
                   <Route path='/' element={<Home/>}/>
+                  <Route path='/login' element={<Login/>} />
+                  <Route path='/signUP' element={<SignUp/>} />
               </Routes>
             </main>
 

@@ -1,6 +1,6 @@
 export default function Home(){
     return(
-        <div className="mt-5">
+        <div style={{'marginTop' : '18%'}}>
             {/* hero section */}
             <section className="container-fluid">
                 <div className="row align-items-center">

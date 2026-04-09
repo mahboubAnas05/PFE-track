@@ -42,11 +42,11 @@ export default function Navbar(){
                         </Link>
                     </div>
                     <div>
-                        <Link to={"/#home"} className="btn text-light me-1" style={{'backgroundColor' : '#2bae68'}}>
+                        <Link to={"/signUP"} className="btn text-light me-1" style={{'backgroundColor' : '#2bae68'}}>
                             S'inscrire
                         </Link>
                 
-                        <Link to={"/#home"} className="btn btn-outline-light">
+                        <Link to={"/login"} className="btn btn-outline-light">
                             Se Connecter
                         </Link>
 
@@ -107,11 +107,11 @@ export default function Navbar(){
                             </Link>
                         </div>
                         <div className="p-3">
-                            <Link to={"/#home"} className="btn text-light me-1" style={{'backgroundColor' : '#2bae68'}}>
+                            <Link to={"/signUP"} className="btn text-light me-1" style={{'backgroundColor' : '#2bae68'}}>
                                 S'inscrire
                             </Link>
                     
-                            <Link to={"/#home"} className="btn btn-outline-light">
+                            <Link to={"/login"} className="btn btn-outline-light">
                                 Se Connecter
                             </Link>
 
