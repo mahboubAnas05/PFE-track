@@ -1,23 +1,25 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
+import Home from './pages/home';
+import Footer from './components/footer';
 
 function App() {
   return (
     <BrowserRouter>
-          <div className='mx-3'>
-            <header>
-                <Navbar/>
+          <div className=''>
+            <header className='fixed-top' style={{'backgroundColor' : '#002457'}}>
+              <Navbar/>
             </header>
 
-            <main>
+            <main style={{'marginTop' : '16%'}}>
               <Routes>
-                  <Route path='/'/>
+                  <Route path='/' element={<Home/>}/>
               </Routes>
             </main>
 
-            <footer>
-
+            <footer style={{'marginTop' : '8%'}}>
+                <Footer/>
             </footer>
 
           </div>
