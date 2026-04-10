@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom"
+
 export default function SignUp(){
     return(
-        <div style={{'marginTop' : '26%'}}>
+        <div id="signMargin">
             <div className="container">
                 <div className="row">
                     <div className="col-md-3 col-1"></div>
@@ -27,6 +29,9 @@ export default function SignUp(){
                             </div>
                             <div className="text-center mt-3">
                                 <input type="submit" value="S'inscrire" style={{'backgroundColor' : '#2bae68'}} className="btn text-light" />
+                            </div>
+                            <div className="text-center text-light">
+                                <Link to={'/login'} className="text-light">Dèja un compte ?</Link>
                             </div>
                         </form>
                     </div>

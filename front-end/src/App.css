@@ -41,7 +41,16 @@
     border: 1px solid #eeeeee;
     border-radius: 10px;
     padding: 1rem;
-    scale: 1.2;
+    scale: 1.1;
     background-color: #2bae686b;
     transition: 700ms;
+}
+#LivMargin, #LogId, #signMargin, #marginLivAdd{
+  margin-top: 10%;
+}
+
+@media screen and (max-width: 768px) {
+  #LivMargin, #LogId, #signMargin, #marginLivAdd{
+    margin-top: 20%;
+  }
 }

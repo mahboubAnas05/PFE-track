@@ -2,9 +2,11 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Home from './pages/home';
+import LivrableIndex from './pages/LivrablesIndex';
+import AddLivrable from './pages/LivrablesAdd';
+import SignUp from './pages/signUp';
 import Login from './pages/login';
 import Footer from './components/footer';
-import SignUp from './pages/signUp';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <main>
               <Routes>
                   <Route path='/' element={<Home/>}/>
+                  <Route path='/livrablesIndex' element={<LivrableIndex/>} />
+                  <Route path='/livrableAdd' element={<AddLivrable/>}/>
                   <Route path='/login' element={<Login/>} />
                   <Route path='/signUP' element={<SignUp/>} />
               </Routes>

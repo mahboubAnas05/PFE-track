@@ -53,27 +53,6 @@ export default function Home(){
                     </div>
                 </div>
             </section>
-            
-            {/*soumettre le sujet si user = "etudiant*/}
-            <section style={{'marginTop': '6rem'}} >
-                <h2 className="text-light text-center pb-2">
-                        Pour soumettre votre projet
-                </h2>
-                <div className="container-fluid row mt-4">
-                    <div className="col-md-1"></div>
-                    <div className="col-md-10">
-                        <form action="" method="Post" className="d-flex justify-content-center align-items-center gap-2">
-                            <div>
-                                <input type="text" name="" id="" className="form-control" placeholder="titre de projet"/>
-                            </div>
-                            <div className="text-center">
-                                <input type="submit" value="Envoyer" className="btn text-light" style={{'backgroundColor' : '#2bae68'}}/>
-                            </div>
-                        </form>
-                    </div>
-                    <div className="col-md-1"></div>
-                </div>
-            </section>
 
             {/*proposer le sujet si user = "encadrant*/}
             <section style={{'marginTop': '6rem'}} >

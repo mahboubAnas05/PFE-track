@@ -27,7 +27,7 @@ export default function Navbar(){
                 {/* les navigatuer link dans les grandes ecrans*/}
                 <div className="d-md-flex d-none align-items-center gap-4">
                     <div>
-                        <Link to={"/#home"} className="text-light text-decoration-none">
+                        <Link to={"/livrablesIndex"} className="text-light text-decoration-none">
                             Espace Livrable
                         </Link>
                     </div>
@@ -92,7 +92,7 @@ export default function Navbar(){
                     <div className={`${!isOpen ? 'd-none' : 'd-block'} d-md-none position-absolute top-100 start-0 w-100 z-3 bg-primary border-bottom border-secondary`}>
                         
                         <div className="p-3">
-                            <Link to={"/#home"} className="text-light text-decoration-none">
+                            <Link to={"/livrablesIndex"} className="text-light text-decoration-none">
                                 Espace Livrable
                             </Link>
                         </div>

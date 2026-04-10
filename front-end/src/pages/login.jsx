@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom"
+
 export default function Login(){
     return(
-        <div style={{'marginTop' : '26%'}}>
+        <div id="LogId">
             <div className="container">
                 <div className="row">
                     <div className="col-md-3 col-1"></div>
@@ -19,6 +21,9 @@ export default function Login(){
                             </div>
                             <div className="text-center mt-3">
                                 <input type="submit" value="Se Connecter" style={{'backgroundColor' : '#2bae68'}} className="btn text-light" />
+                            </div>
+                            <div className="text-center text-light">
+                                <Link to={'/signUp'} className="text-light">Pas de compte ?</Link>
                             </div>
                         </form>
                     </div>
