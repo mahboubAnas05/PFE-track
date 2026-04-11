@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->text('contenu');
-            $table->enum('type_comment', ['feedback', 'advice']);
+            $table->enum('type_comment', ['proposition', 'comment', 'consultation']);
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('projet_id')->constrained('projets')->cascadeOnDelete();
+            $table->foreignId('livrable_id')->constrained('livrables')->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -32,7 +32,7 @@ export default function Navbar(){
                         </Link>
                     </div>
                     <div>
-                        <Link to={"/#home"} className="text-light text-decoration-none">
+                        <Link to={"/projetsIndex"} className="text-light text-decoration-none">
                             Liste des Projets {/*l'espace où l'encadrant et le consultant reçoit les livrables envoyer par l'etudiant*/}
                         </Link>
                     </div>
@@ -76,7 +76,7 @@ export default function Navbar(){
 
 
                 {/* burger menu*/}
-                <div className="d-md-none">
+                <div className="d-md-none r rounded border">
                     <button onClick={OpenToggel} className="btn">
                         {
                             !isOpen ?
@@ -97,7 +97,7 @@ export default function Navbar(){
                             </Link>
                         </div>
                         <div className="p-3">
-                            <Link to={"/#home"} className="text-light text-decoration-none">
+                            <Link to={"/projetsIndex"} className="text-light text-decoration-none">
                                 Liste des Projets {/*l'espace où l'encadrant et le consultant reçoit les livrables envoyer par l'etudiant*/}
                             </Link>
                         </div>

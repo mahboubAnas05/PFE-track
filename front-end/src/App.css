@@ -45,12 +45,27 @@
     background-color: #2bae686b;
     transition: 700ms;
 }
-#LivMargin, #LogId, #signMargin, #marginLivAdd{
-  margin-top: 10%;
+#LivMargin, #LogId, #signMargin, #marginLivAdd, #marginHome, #marginPro, #margAddProj, .m{
+  margin-top: 9%;
 }
 
 @media screen and (max-width: 768px) {
-  #LivMargin, #LogId, #signMargin, #marginLivAdd{
+  #LivMargin, #LogId, #signMargin, #marginLivAdd, #marginHome, #marginPro, #margAddProj, .m{
     margin-top: 20%;
   }
+}
+
+.r>p, #grounButton{
+  font-family: cursive;
+  font-style: italic;
+}
+
+.r:hover{
+  box-shadow: 1px 1px 1rem 7px rgba(43, 174, 104, 0.62);
+  scale: 1.05;
+  transition: 600ms;
+}
+#grounButton:hover{
+  scale: 1.1;
+  transition: 700ms;
 }

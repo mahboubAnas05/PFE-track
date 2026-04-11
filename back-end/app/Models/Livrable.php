@@ -25,4 +25,9 @@ class Livrable extends Model
         return $this->belongsTo(Projet::class, 'projet_id');
     }
 
+    //mettre la relation avec la table comment
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
 }

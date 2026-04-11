@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('livrables', function (Blueprint $table) {
             $table->id();
             $table->string('chemin')->nullable();
-            $table->string('type_livrable');
+            $table->enum('type_livrable', ['PDF', 'JPG', 'MP4']);
             $table->enum('status', ['validated', 'pending', 'rejected'])->default('pending');
             $table->foreignId('projet_id')->constrained('projets')->cascadeOnDelete();
             $table->timestamps();
@@ -28,4 +28,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('livrables');
     }
-};
+    };

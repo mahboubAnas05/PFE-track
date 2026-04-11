@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom"
+
 export default function Home(){
     return(
-        <div style={{'marginTop' : '18%'}}>
+        <div id="marginHome">
             {/* hero section */}
             <section className="container-fluid">
                 <div className="row align-items-center">
                     <div className="col-md-6">
-                        <img src="HomeImage.png" className="w-100" alt="" />
+                        <img src="imageLanding.png" className="w-100" alt="" />
                     </div>
                     <div className="col-md-6 mt-3">
                         <h3 className="text-center text-light text-capitalize">
@@ -54,6 +56,25 @@ export default function Home(){
                 </div>
             </section>
 
+            {/*creer le projet si user = "etudiant*/}
+            <section style={{'marginTop': '6rem'}}>
+               <div className="container-fluid row">
+                    <div className="col-2"></div>
+                    <div className="col-8">
+                        <article className="border p-5 r" style={{'borderRadius' : '50%'}}>
+                            <p className="text-center text-light">
+                                Chaque grand projet commence par une simple idée.
+                                Transformez la vôtre en réalité et marquez la fin de votre parcours académique avec fierté.
+                            </p>
+                            <div className="text-center">
+                                <Link to={'/projetAdd'} className="btn text-light" id="grounButton" style={{'backgroundColor' : '#2bae68'}}>+ Créer Votre Projet</Link>
+                            </div>
+                        </article>
+                    </div>
+                    <div className="col-2"></div>
+               </div>
+            </section>
+
             {/*proposer le sujet si user = "encadrant*/}
             <section style={{'marginTop': '6rem'}} >
                 <h2 className="text-light text-center pb-2">
@@ -64,7 +85,8 @@ export default function Home(){
                     <div className="col-md-10">
                         <form action="" method="Post" className="d-flex justify-content-center align-items-center gap-2">
                             <div>
-                                <input type="text" name="" id="" className="form-control" placeholder="nom d'un projet"/>
+                                <textarea name="contenu" id="" className="form-control" placeholder="nom d'un projet" ></textarea>
+                                {/*c'est une input qui est appartient de table comment 'contenu' */}
                             </div>
                             <div className="text-center">
                                 <input type="submit" value="Proposer" className="btn text-light" style={{'backgroundColor' : '#2bae68'}}/>

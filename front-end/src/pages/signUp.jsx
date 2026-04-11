@@ -6,7 +6,7 @@ export default function SignUp(){
             <div className="container">
                 <div className="row">
                     <div className="col-md-3 col-1"></div>
-                    <div className="col-md-6 col-10 border rounded p-5">
+                    <div className="col-md-6 col-10 r border rounded p-5">
                         <h2 className="text-light text-center">
                             S'inscrire
                         </h2>

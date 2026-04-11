@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Livrable;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class ProjetController extends Controller
+class LivrableController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,15 +15,8 @@ class ProjetController extends Controller
     public function index()
     {
         //
-        
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $livrables = Livrable::all();
+        return response()->json($livrables);
     }
 
     /**
@@ -30,6 +25,13 @@ class ProjetController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'chemin' => 'nullable|file|mimes:pdf,jpg,jpeg,png,mp4',
+            'type_livrable' => 'nullable|in:PDF,JPG,JPEG,PNG,MP4'
+        ]);
+
+    //    $user = auth()->user()->etudiantProjet()->first();
+
     }
 
     /**
