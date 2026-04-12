@@ -11,9 +11,9 @@ export default function LivrableIndex(){
     return(
         // seulement l'etudiant peut la voir
         <div id="LivMargin">
-            <h1 className="text-center text-light">
+            <h2 className="text-center text-light">
                 Liste des Livrables
-            </h1>
+            </h2>
             <div className="mt-3 container-fluid row">
                 <div className="col-md-2"></div>
                 <div className="col-md-8">

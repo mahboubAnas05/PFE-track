@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('chemin')->nullable();
             $table->enum('type_livrable', ['PDF', 'JPG', 'MP4']);
             $table->enum('status', ['validated', 'pending', 'rejected'])->default('pending');
+            $table->decimal('note', 4, 2)->nullable();
             $table->foreignId('projet_id')->constrained('projets')->cascadeOnDelete();
             $table->timestamps();
         });

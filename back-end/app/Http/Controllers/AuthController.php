@@ -12,6 +12,13 @@ class AuthController extends Controller
     //inscription d'un utilisateur (creation de token)
     public function register(Request $request){
 
+        // seulement l'admin peut faire l'ajout du utilisateur
+        if(auth()->user()->role !== 'admin'){
+            return response()->json([
+                'message' => 'Non autorisé'
+            ], 403);
+        }
+
         // valider l'insertion 
         $request->validate([
             'name' => 'required|string|max:255',
@@ -19,7 +26,6 @@ class AuthController extends Controller
             'password' => 'required|confirmed|min:8',
             'role' => 'required|in:admin,etudiant,encadrant,consultant'
         ]);
-
         //creation d'utilisateur 
         $user = new User();
         $user->name = $request->name;

@@ -24,13 +24,18 @@ class LivrableController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // seulement l'etudiant peut ajouter une livrable
+        if(auth()->user()->role !== 'etudiant'){
+            return response()->json([
+                'message' => 'Non autorisé'
+            ], 403);
+        }
+
         $request->validate([
             'chemin' => 'nullable|file|mimes:pdf,jpg,jpeg,png,mp4',
             'type_livrable' => 'nullable|in:PDF,JPG,JPEG,PNG,MP4'
         ]);
 
-    //    $user = auth()->user()->etudiantProjet()->first();
 
     }
 

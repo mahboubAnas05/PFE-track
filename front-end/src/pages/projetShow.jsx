@@ -11,7 +11,7 @@ export default function ProjetShow(){
                         <div className="d-flex justify-content-between">
                             <div>
                                 <h5 className="text-light mt-3">Nom Projet</h5>
-                                <p className="small text-light">12/12/2012 | <strong>Salle</strong> | <span>16.50</span></p>
+                                <p className="small text-light">12/12/2012 | <strong>Salle</strong> | <span>16.50/20</span></p>
                                 <div className="text-light">
                                     description Lorem ipsum dolor sit amet consectetur.
                                 </div>
