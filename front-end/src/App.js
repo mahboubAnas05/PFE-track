@@ -7,6 +7,8 @@ import AddLivrable from './pages/LivrablesAdd';
 import ShowLivrabl from './pages/livrableShow';
 import IndexProjets from './pages/projetsIndex';
 import AddProjet from './pages/projetAdd';
+import ProjetShow from './pages/projetShow';
+import ProjetParametre from './pages/parametreProjet';
 import SignUp from './pages/signUp';
 import Login from './pages/login';
 import Footer from './components/footer';
@@ -27,6 +29,8 @@ function App() {
                   <Route path='/showLiv' element={<ShowLivrabl/>} />
                   <Route path='/projetsIndex' element={<IndexProjets/>}/>
                   <Route path='/projetAdd' element={<AddProjet/>} />
+                  <Route path='/projetSetting' element={<ProjetParametre/>} />
+                  <Route path='/showProjet' element={<ProjetShow/>} />
                   <Route path='/login' element={<Login/>} />
                   <Route path='/signUP' element={<SignUp/>} />
               </Routes>
