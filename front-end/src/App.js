@@ -9,6 +9,10 @@ import IndexProjets from './pages/projetsIndex';
 import AddProjet from './pages/projetAdd';
 import ProjetShow from './pages/projetShow';
 import ProjetParametre from './pages/parametreProjet';
+import CommentIndex from './pages/commentsIndex';
+import AddComment from './pages/commentAdd';
+import ComptesEspace from './pages/espaceCompte';
+import Profile from './pages/profile';
 import SignUp from './pages/signUp';
 import Login from './pages/login';
 import Footer from './components/footer';
@@ -31,6 +35,10 @@ function App() {
                   <Route path='/projetAdd' element={<AddProjet/>} />
                   <Route path='/projetSetting' element={<ProjetParametre/>} />
                   <Route path='/showProjet' element={<ProjetShow/>} />
+                  <Route path='/commentIndex' element={<CommentIndex/>} />
+                  <Route path='/commentAdd' element={<AddComment/>} />
+                  <Route path='/compteMan' element={<ComptesEspace/>} />
+                  <Route path='/profil' element={<Profile/>} />
                   <Route path='/login' element={<Login/>} />
                   <Route path='/signUP' element={<SignUp/>} />
               </Routes>

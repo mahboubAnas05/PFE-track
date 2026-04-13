@@ -28,7 +28,7 @@ export default function Home(){
 
                 <div className="container mt-5">
                     <div className="row g-4 text-center">
-                        <div className="col-md-4 hoverCard">
+                        <div className="col-md-4 r rounded">
                             <h3 className="text-light">
                                 Suivi du cycle de vie
                             </h3>
@@ -36,7 +36,7 @@ export default function Home(){
                                 Gérez chaque étape de votre projet, de la proposition du sujet jusqu'à la soutenance finale, avec une vision claire sur votre progression.
                             </p>
                         </div>
-                        <div className="col-md-4 hoverCard">
+                        <div className="col-md-4 r rounded">
                             <h3 className="text-light">
                                 Collaboration Active                           
                             </h3>
@@ -44,7 +44,7 @@ export default function Home(){
                                 Recevez des feedbacks directs de votre encadrant et bénéficiez des conseils précieux de consultants pour débloquer vos défis techniques.                            
                             </p>
                         </div>
-                        <div className="col-md-4 hoverCard">
+                        <div className="col-md-4 r rounded">
                             <h3 className="text-light">
                                 Gestion des Livrables
                             </h3>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function ProjetParametre(){
     return(
         <div className="m">
@@ -32,6 +34,9 @@ export default function ProjetParametre(){
                                 <div className="border col-md-4 r rounded p-3 text-light">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, repudiandae!
                                 </div>
+                            </div>
+                            <div className="text-center">
+                                <Link to={'/livrablesIndex'} className="text-light">Voir Tous</Link>
                             </div>
 
                             <div>

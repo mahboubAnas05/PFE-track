@@ -54,7 +54,7 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
         
-        // requete d'importation le premiaer email qui egale l'email entré
+        // requete d'importation le premier email qui egale l'email entré
         $user = User::where('email', $request->email)->first();
 
         // verifier si l'email n'exist pas dans la table ou le mot de pass n'est pas trouvé dans la table

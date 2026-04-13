@@ -37,14 +37,6 @@
   }
 }
 
-.hoverCard:hover{
-    border: 1px solid #eeeeee;
-    border-radius: 10px;
-    padding: 1rem;
-    scale: 1.1;
-    background-color: #2bae686b;
-    transition: 700ms;
-}
 #LivMargin, #LogId, #signMargin, #marginLivAdd, #marginHome, #marginPro, #margAddProj, .m{
   margin-top: 9%;
 }

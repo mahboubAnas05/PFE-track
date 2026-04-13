@@ -14,13 +14,13 @@ class ProjetController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->role !== 'encadrant' || auth()->user()->role !== 'consultant' ){
+        if(auth()->user()->role !== 'encadrant' && auth()->user()->role !== 'consultant' ){
             return response()->json([
                 'message' => 'Non autorisé'
             ], 403);
         }
-        // inportation de tous les données "select * form projets"
-        $projets = Projet::all();
+        // inportation de tous les données qui apartient un enccadrant
+        $projets = Projet::where('encadrant_id', auth()->id())->get();
 
         return response()->json([
             'projets' => $projets
@@ -41,7 +41,7 @@ class ProjetController extends Controller
         // validation de creation d'un projet
         $request->validate([
             'titre' => 'required|string|min:3',
-            'description' => 'required|string|min:3',
+            'description' => 'required|string|mbin:3',
             'date_soutenance' => 'nullable|date',
             'note_finale' => 'nullable|numeric|between:0,20',
             'salle' => 'nullable|string|min:3'
@@ -67,8 +67,8 @@ class ProjetController extends Controller
      */
     public function show(string $id)
     {
-        // chercher l'id du projet
-        $projet = Projet::findOrFail($id);
+        // importer le projet a partir de tout les livrables liées
+        $projet = Projet::with('livrables')->findOrFail($id);
 
         return response()->json([
             'projet' => $projet
@@ -80,7 +80,6 @@ class ProjetController extends Controller
      */
     public function update(Request $request, string $id)
     {        
-
         // validation de creation d'un projet
         $request->validate([
             'titre' => 'required|string|min:3',
@@ -98,18 +97,23 @@ class ProjetController extends Controller
                'titre' => $request->titre,
                'description' => $request->description
             ]);
-        } 
-        // seulement l'admin peut modifier les info de soutenance
+        }
+
+        // seulement l'admin peut modifier les info de soutenance et choisir l'encadrent
         if (auth()->user()->role === 'admin'){
             $projet->update([
                'date_soutenance' => $request->date_soutenance,
-               'salle' => $request->salle
+               'salle' => $request->salle,
+               'encadrant_id' => $request->encadrant_id
             ]);
         }
+        
+        // importer la derniere version du projet
+        $projet->refresh();
 
-            return response()->json([
-                'projet' => $projet
-            ]);     
+        return response()->json([
+            'projet' => $projet
+        ]);     
     }
     /**
      * Remove the specified resource from storage.
@@ -119,7 +123,7 @@ class ProjetController extends Controller
         //
         $projet = Projet::findOrFail($id);
 
-        if(auth()->user()->role === 'etudiant'){
+        if(auth()->user()->role === 'etudiant' && $projet->etudiant_id === auth()->id()){
             $projet->delete();
         }
 
@@ -127,4 +131,11 @@ class ProjetController extends Controller
             'message' => 'suppression avec succés'
         ]);
     }
-}
+    public function getEncadrant(){
+        // importer tous les utilisateur qui sont des encadrant
+        $encadrants = User::where('role', 'encadrant')->select('id', 'name')->get();
+        return response()->json([
+            'encadrants' => $encadrants
+        ]);
+    }
+}   
